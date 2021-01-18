@@ -1,0 +1,79 @@
+@startuml
+
+entity user {
+    * id: serial PK
+	--
+    * group_id: unsigned bigint 
+    * username: text(32)
+	* email: varchar(32)
+    * password: varchar(32)
+    * salt: text(16)
+    * last_login: timestamp
+    * created_at: timestamp
+}
+
+entity group {
+    * id: serial PK 
+	--
+    * name:text(64)
+}
+
+entity permission {
+    * id: serial PK
+	--
+    * name: text(64)
+}
+
+entity group_permission{
+    * composite_key(group_id, permission_id)
+	--
+    * group_id: unsigned bigint
+    * permission_id: unsigned bigint
+}
+
+entity brand  {
+	* id: serial PK
+	--
+	* name: text(32)
+}
+
+entity model {
+	* id: serial PK
+	--
+	* name: text(32)
+}
+
+entity list {
+	* id: serial PK
+	--
+	* user_id: unsigned bigint
+	* list_name: varchar(32)
+}
+
+entity shoe_info {
+	* id: serial PK
+	--
+	* list_id: unsigned bigint
+	* brand_id: unsigned bigint
+	* model_id: unsigned bigint
+	* size: float
+	* price: float
+	* retail_price: float
+	* amount: int
+	* colorway: text(32)
+	* style: varchar(32)
+	* release_date: date
+}
+
+user --|{ list
+group --|{ user
+group --|{ group_permission
+permission --|{ group_permission
+shoe_info --|{ brand
+shoe_info --|{ model
+shoe_info --|{ list
+
+
+@enduml
+
+

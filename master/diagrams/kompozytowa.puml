@@ -1,0 +1,55 @@
+@startuml
+
+entity user {
+    * group_id
+    * username
+	* email
+    * password
+    * salt
+    * last_login
+    * created_at
+}
+
+entity group {
+    * name
+
+}
+
+entity permission {
+    * name
+}
+
+entity brand  {
+	* name
+}
+
+entity model {
+	* name
+}
+
+entity list {
+	* list_name
+}
+
+entity shoe_info {
+	* size
+	* price
+	* retail_price
+	* amount
+	* colorway
+	* style
+	* release_date
+}
+
+user --|{ list
+group --|{ user
+group --|{ group_permission
+permission --|{ group_permission
+shoe_info --|{ brand
+shoe_info --|{ model
+shoe_info --|{ list
+
+
+@enduml
+
+
