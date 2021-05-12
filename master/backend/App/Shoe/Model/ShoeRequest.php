@@ -1,13 +1,9 @@
 <?php
 
 
-namespace App\Shoe\Entity;
+namespace App\Shoe\Model;
 
-
-use App\Database\Entity\Entity;
-
-
-class ShoeEntity extends Entity {
+class ShoeRequest{
     private $id;
     private $list_id;
     private $brand_id;
@@ -20,182 +16,179 @@ class ShoeEntity extends Entity {
     private $style;
     private $release_date;
 
-
     /**
      * @return mixed
      */
-    public function getId() {
+    public function getId()
+    {
         return $this->id;
     }
 
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
 
     /**
      * @return mixed
      */
-    public function getListId() {
+    public function getListId()
+    {
         return $this->list_id;
     }
 
     /**
      * @param mixed $list_id
-     * @return ShoeEntity
      */
-    public function setListId($list_id) {
+    public function setListId($list_id)
+    {
         $this->list_id = $list_id;
-        return $this;
     }
-
 
     /**
      * @return mixed
      */
-    public function getBrandId() {
+    public function getBrandId()
+    {
         return $this->brand_id;
     }
 
     /**
      * @param mixed $brand_id
-     * @return ShoeEntity
      */
-    public function setBrandId($brand_id) {
+    public function setBrandId($brand_id)
+    {
         $this->brand_id = $brand_id;
-        return $this;
     }
-
 
     /**
      * @return mixed
      */
-    public function getModelId() {
-        return $this->brand_id;
+    public function getModelId()
+    {
+        return $this->model_id;
     }
 
     /**
      * @param mixed $model_id
-     * @return ShoeEntity
      */
-    public function setModelId($model_id) {
+    public function setModelId($model_id)
+    {
         $this->model_id = $model_id;
-        return $this;
     }
-
 
     /**
      * @return mixed
      */
-    public function getSize() {
+    public function getSize()
+    {
         return $this->size;
     }
 
     /**
      * @param mixed $size
-     * @return ShoeEntity
      */
-    public function setSize($size) {
+    public function setSize($size)
+    {
         $this->size = $size;
-        return $this;
     }
-
 
     /**
      * @return mixed
      */
-    public function getPrice() {
+    public function getPrice()
+    {
         return $this->price;
     }
 
     /**
      * @param mixed $price
-     * @return ShoeEntity
      */
-    public function setPrice($price) {
+    public function setPrice($price)
+    {
         $this->price = $price;
-        return $this;
     }
-
 
     /**
      * @return mixed
      */
-    public function getRetailPrice() {
-        return $this->price;
+    public function getRetailPrice()
+    {
+        return $this->retail_price;
     }
 
     /**
      * @param mixed $retail_price
-     * @return ShoeEntity
      */
-    public function setRetailPrice($retail_price) {
+    public function setRetailPrice($retail_price)
+    {
         $this->retail_price = $retail_price;
-        return $this;
     }
-
 
     /**
      * @return mixed
      */
-    public function getAmount() {
+    public function getAmount()
+    {
         return $this->amount;
     }
 
     /**
      * @param mixed $amount
-     * @return ShoeEntity
      */
-    public function setAmount($amount) {
+    public function setAmount($amount)
+    {
         $this->amount = $amount;
-        return $this;
     }
-
 
     /**
      * @return mixed
      */
-    public function getColorway() {
+    public function getColorway()
+    {
         return $this->colorway;
     }
 
     /**
      * @param mixed $colorway
-     * @return ShoeEntity
      */
-    public function setColorway($colorway) {
+    public function setColorway($colorway)
+    {
         $this->colorway = $colorway;
-        return $this;
     }
-
 
     /**
      * @return mixed
      */
-    public function getStyle() {
+    public function getStyle()
+    {
         return $this->style;
     }
 
     /**
      * @param mixed $style
-     * @return ShoeEntity
      */
-    public function setStyle($style) {
+    public function setStyle($style)
+    {
         $this->style = $style;
-        return $this;
     }
-
 
     /**
      * @return mixed
      */
-    public function getReleaseDate() {
+    public function getReleaseDate()
+    {
         return $this->release_date;
     }
 
     /**
      * @param mixed $release_date
-     * @return ShoeEntity
      */
-    public function setReleaseDate($release_date) {
+    public function setReleaseDate($release_date)
+    {
         $this->release_date = $release_date;
-        return $this;
     }
-
 }
